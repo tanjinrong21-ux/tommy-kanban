@@ -176,11 +176,97 @@
     color: #AEAEB2;
     font-size: 0.9rem;
   }
+  /* ── Backlog Bar ── */
+  .backlog-bar {
+    margin: 0 32px 18px;
+    padding: 16px 0 12px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .backlog-bar-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #AEAEB2;
+    margin-bottom: 10px;
+    padding: 0 4px;
+  }
+  .backlog-row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 0 2px 4px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .backlog-item {
+    flex: 0 0 auto;
+    min-width: 190px;
+    max-width: 220px;
+    padding: 11px 14px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: box-shadow 0.1s ease;
+  }
+  .backlog-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .backlog-item-top {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .backlog-project-tag {
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: #6B7280;
+    background: #F3F4F6;
+    padding: 1px 7px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .backlog-priority-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .backlog-item-text {
+    font-size: 0.78rem;
+    color: #1A1A1A;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .backlog-item-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.65rem;
+    color: #8E8E93;
+  }
+  .backlog-ddl {
+    font-weight: 500;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.62rem;
+    white-space: nowrap;
+  }
+  .backlog-ddl.urgent { background: #FEE2E2; color: #B91C1C; }
+  .backlog-ddl.soon { background: #FEF3C7; color: #B45309; }
+  .backlog-ddl.normal { background: #F3F4F6; color: #6B7280; }
   @media (max-width: 480px) {
     .container { grid-template-columns: 1fr; padding: 0 16px 24px; }
     .header { padding: 20px 16px 12px; }
     .header h1 { font-size: 1.4rem; }
     .summary-bar { padding: 0 16px 12px; }
+    .backlog-bar { margin: 0 16px 14px; }
     .card-header { flex-direction: column; gap: 8px; }
     .status-badge { margin-left: 0; align-self: flex-start; }
   }
@@ -189,11 +275,12 @@
 <body>
 <div class="header">
   <h1>项目看板</h1>
-  <div class="meta"><span>2026-07-10 21:45</span><span>7 个项目</span></div>
+  <div class="meta"><span>2026-07-11 11:51</span><span>7 个项目</span></div>
 </div>
 <div class="summary-bar">
   <span class="summary-chip"><span class="dot" style="background:#F59E0B;"></span>项目交付中 <strong>4</strong></span><span class="summary-chip"><span class="dot" style="background:#3B82F6;"></span>方案沟通中 <strong>3</strong></span>
 </div>
+<div class="backlog-bar"><div class="backlog-bar-label">📋 汇总待办 · Top 5</div><div class="backlog-row"><div class="backlog-item"><div class="backlog-item-top"><span class="backlog-project-tag">GM</span><span class="backlog-priority-dot" style="background:#EF4444;"></span></div><div class="backlog-item-text">基于手册+模板开发「基于工作过程调研」工作坊大纲和材料</div><div class="backlog-item-meta"><span class="backlog-ddl urgent">08/14 🔥 马上</span></div></div><div class="backlog-item"><div class="backlog-item-top"><span class="backlog-project-tag">GM</span><span class="backlog-priority-dot" style="background:#EF4444;"></span></div><div class="backlog-item-text">将「人员能力矩阵搭建方法论」转化为培训工作坊（大纲+材料）</div><div class="backlog-item-meta"><span class="backlog-ddl urgent">08/14 🔥 马上</span></div></div><div class="backlog-item"><div class="backlog-item-top"><span class="backlog-project-tag">GM</span><span class="backlog-priority-dot" style="background:#EF4444;"></span></div><div class="backlog-item-text">整合双轨工作坊为3天完整交付方案</div><div class="backlog-item-meta"><span class="backlog-ddl urgent">08/14 🔥 马上</span></div></div><div class="backlog-item"><div class="backlog-item-top"><span class="backlog-project-tag">GM</span><span class="backlog-priority-dot" style="background:#EF4444;"></span></div><div class="backlog-item-text">终审与交付前检查</div><div class="backlog-item-meta"><span class="backlog-ddl urgent">08/14 🔥 马上</span></div></div><div class="backlog-item"><div class="backlog-item-top"><span class="backlog-project-tag">AI</span><span class="backlog-priority-dot" style="background:#EF4444;"></span></div><div class="backlog-item-text">终审彩排</div><div class="backlog-item-meta"><span class="backlog-ddl urgent">07/24 🔥 已逾期</span></div></div></div></div>
 <div class="container">
   <div class="card">
   <div class="card-header">
